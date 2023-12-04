@@ -7,14 +7,36 @@
   createApp({
     data() {
       return {
-        MyNewTodoListEl: '',
-        MytodoList : [
-            'andare a correre', 
-            'vincere una maratona',
-            'seguire a tempo la musica',
-            'viaggiare per il mondo'
-        ],
 
+        listaTodos : [
+            {
+                text: 'devo andare in palestra',
+                done: 'true',
+            },
+            {
+                text: 'devo contare fino a 100',
+                done: 'false',
+            },
+            {
+                text: 'pulire la casa in 40 minuti',
+                done: 'true',
+            },
+            {
+                text: 'giocare a Warzone6',
+                done: 'false',
+            },
+            {
+                text: 'cominciare la dieta',
+                done: 'true',
+            },
+
+        ]
       }
+      
+    },
+
+    methods:{
+        
     }
+    
   }).mount('#app')
