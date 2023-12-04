@@ -7,8 +7,7 @@
   createApp({
     data() {
       return {
-
-        listaTodos : [
+            listaTodos : [
             {
                 text: 'devo andare in palestra',
                 done: 'true',
