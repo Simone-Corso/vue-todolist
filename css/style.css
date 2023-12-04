@@ -12,3 +12,12 @@ h1{
     text-align: center;
     margin-top: 2rem;
 }
+.wrapper{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.lista-item{
+    margin-top: 5rem;
+}
