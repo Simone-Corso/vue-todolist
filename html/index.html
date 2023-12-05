@@ -13,13 +13,26 @@
             <h1>
                 Vue TodoList
             </h1>
+        <!--inserire poi un input all'interno del main -->
         <main class="wrapper">
-            <div class="lista-item">
-                <p>
-                {{listaTodos}}
-            </p>
+            <div class="taskbar">
+                <input type="text" class="new-todo-element" name="userTodo" id="userTodo" v-model="newTodoElement" @keyup.enter="addNewTodoItem(todoNewEl)">
             </div>
-        </main>
+        <!-- crea problemi nel stampare in modo corretto todolist-->
+        <ul class="todo-list" v-if="todoList.length > 0">
+            <li class="todo-item" v-for="(todoNewEl, index) in todoList">
+                <p>
+                    {{ todoList }}
+                </p>
+                <span>
+                    <i class="fa-solid fa-xmark"@click="removeTodoElement(index)"></i>
+                </span>
+            </li>
+        </ul>
+        <p v-else>
+            Aggiungere un nuovo todo di cose da fare, quindi aggiungere altro.
+        </p>
+    </main>
     </div>
     <script src="../js/script.js"></script>
 </body>
