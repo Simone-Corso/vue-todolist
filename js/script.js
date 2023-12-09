@@ -11,7 +11,7 @@ createApp({
             todoList : [
                 {
                     text: 'devo andare in palestra',
-                    done: 'true',
+                    done: 'false',
                 },
                 {
                     text: 'devo contare fino a 100',
@@ -49,8 +49,6 @@ createApp({
                     done: false
                 });
             }
-            else
-                console.error('Cannot insert an item which is not a capital city');
         },
 
         stringBeautifier(rawString){
