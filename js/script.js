@@ -34,33 +34,43 @@ createApp({
           }
           
         },
-    
     methods: {
         addNewTodoItem(newElement){
             newElement = newElement.trim();
             console.warn(newElement);
 
-            const todoNewEl = this.stringtodoNewEl(newElement);
+            const beatifiedElement = this.stringBeautifier(newElement);
 
-            if (todoNewEl.length > 3 && this.todo.includes(todoNewEl)
-            && !this.todoList.includes(todoNewEl) ){
+            if (newElement.length > 3 ){
                 this.newTodoElement = '';
-                this.todoList.push(todoNewEl);
+                this.todoList.push({
+                    id: this.todoList[this.todoList.length-1].id + 1 ,
+                    text: beatifiedElement,
+                    done: false
+                });
             }
+            else
+                console.error('Cannot insert an item which is not a capital city');
         },
 
-        stringtodoNewEl(rawString){
+        stringBeautifier(rawString){
             rawString = rawString.trim().toLowerCase();
             return rawString.charAt(0).toUpperCase() + rawString.slice(1);
         },
 
-        removeTodoElement(indexToBeRemoved){
-            console.log(indexToBeRemoved);
+        removeTodoElement(elementId){
+
+            const indexToBeRemoved = this.todoList.findIndex( element => element.id === elementId );
             this.todoList.splice(indexToBeRemoved, 1);
+        },
+
+        interactWithElement(indexToBeStruck){
+            this.todoList[indexToBeStruck].done = !this.todoList[indexToBeStruck].done;
         }
     },
 
     created() {
     },
 }).mount('#app');
+
     
